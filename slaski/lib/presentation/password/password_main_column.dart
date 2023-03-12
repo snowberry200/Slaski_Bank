@@ -343,31 +343,6 @@ class _PasswordColumnState extends State<PasswordColumn> {
                                             MaterialPageRoute(
                                                 builder: (context) =>
                                                     const TabPage()));
-            
-                                        // FutureBuilder(
-                                        //     future: Database(
-                                        //             username:
-                                        //                 widget.sameCallback,
-                                        //             pass: _password.text)
-                                        //         .getinfo(),
-                                        //     builder: (context, snapshot) {
-                                        //       if (snapshot
-                                        //               .connectionState ==
-                                        //           ConnectionState.done) {
-                                        //         return const ScaffoldMessenger(
-                                        //           child: SnackBar(
-                                        //               content: Text(
-                                        //                   'zdałeś',
-                                        //                   style: TextStyle(
-                                        //                       color: Colors
-                                        //                           .blue)),
-                                        //               backgroundColor:
-                                        //                   Colors.red),
-                                        //         );
-                                        //       } else {
-                                        //         return const CircularProgressIndicator();
-                                        //       }
-                                        //     });
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(
