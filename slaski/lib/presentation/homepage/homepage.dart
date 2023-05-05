@@ -4,7 +4,7 @@ import '../../backgroundimage.dart';
 import '../../layout/layout.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key, required String email});
+  const HomePage({super.key,});
 
   @override
   Widget build(BuildContext context) {

@@ -23,7 +23,6 @@ class _MobileScreenState extends State<MobileScreen> {
   Widget build(BuildContext context) {
     return  Container(color: Colors.white.withOpacity(0.1),child: 
     SingleChildScrollView(
-      
       physics:const BouncingScrollPhysics(),
       child: Column(
         children: [

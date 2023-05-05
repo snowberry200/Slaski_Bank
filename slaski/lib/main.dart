@@ -24,7 +24,7 @@ class _SlaskiBankState extends State<SlaskiBank> {
     return const MaterialApp(
       title:'Slaski ING Bank',
       debugShowCheckedModeBanner: false,
-      home:HomePage(email: '',));
+      home:HomePage());
   }
 }
 

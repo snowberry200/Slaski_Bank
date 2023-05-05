@@ -256,7 +256,7 @@ class _PasswordColumnState extends State<PasswordColumn> {
                                               MaterialPageRoute(
                                                   builder: (context) =>
                                                       const HomePage(
-                                                        email: '',
+
                                                       )));
                                         },
                                       ),
