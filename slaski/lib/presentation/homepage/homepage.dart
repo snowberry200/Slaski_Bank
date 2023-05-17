@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import '../../backgroundimage.dart';
+import '../widget/backgroundimage.dart';
 import '../../layout/layout.dart';
 
 class HomePage extends StatelessWidget {

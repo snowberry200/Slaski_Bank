@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../transaction.dart';
+import '../widget/transaction.dart';
 
 class PersonalAccountView extends StatefulWidget {
   const PersonalAccountView({super.key});

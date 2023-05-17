@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slaski/presentation/treasury_view.dart';
+import 'package:slaski/presentation/account_view/treasury_view.dart';
 
 class Treasury extends StatefulWidget {
   const Treasury({super.key});

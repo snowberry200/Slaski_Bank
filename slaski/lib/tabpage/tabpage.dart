@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 // import 'backgroundimage.dart';
 // import '../../LayOut/LayOut.dart';
-import '../backgroundimage.dart';
+import '../presentation/widget/backgroundimage.dart';
 import '../layout/layout.dart';
 import 'tap_bars/personal.dart';
 import 'tap_bars/treasury.dart';
