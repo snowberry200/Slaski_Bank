@@ -11,8 +11,8 @@ class HomePage extends StatelessWidget {
    
     return BackgroundImageWidget(
         image: Layout.isMobile(context)
-            ? const AssetImage('images/chair.jpeg')
-            : const AssetImage('images/pine.jpeg'),
+            ? const AssetImage('images/hy.jpeg')
+            : const AssetImage('images/tree.jpeg'),
         child:  Scaffold(
            backgroundColor: Colors.transparent,
           appBar:Layout.isMobile(context)?
