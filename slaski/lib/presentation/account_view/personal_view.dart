@@ -105,11 +105,11 @@ class _PersonalAccountViewState extends State<PersonalAccountView>
     final List<String> columns = ['Date', 'Credit', 'Amount'];
     return DataTable(
         decoration: BoxDecoration(
-            image: const DecorationImage(
-                image: AssetImage('images/stock.jpeg'),
-                fit: BoxFit.contain,
-                filterQuality: FilterQuality.high,
-                opacity: .2),
+            // image: const DecorationImage(
+            //     image: AssetImage('images/stock.jpeg'),
+            //     fit: BoxFit.contain,
+            //     filterQuality: FilterQuality.high,
+            //     opacity: .2),
             borderRadius: const BorderRadius.all(Radius.circular(0)),
             border: Border.all(
                 color: const Color.fromARGB(255, 223, 236, 235), width: 2)),
