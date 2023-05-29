@@ -183,7 +183,7 @@ class _BusinessFormState extends State<BusinessForm> {
                                 if (ifpassword!.isEmpty) {
                                   return 'Please enter a password';
                                 } else if (ifpassword.length < 10) {
-                                  return 'password shouldnt be less than 4 characters';
+                                  return 'password shouldn\'t be less than 4 characters';
                                 } else {
                                   return null;
                                 }
@@ -238,12 +238,12 @@ class _BusinessFormState extends State<BusinessForm> {
                                 showDialog(
                                     context: context,
                                     builder: (context) {
-                                      return Center(
+                                      return const Center(
                                           child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
-                                        children: const [
+                                        children: [
                                           CircularProgressIndicator(
                                               color: CupertinoColors.activeBlue,
                                               strokeWidth: 4,

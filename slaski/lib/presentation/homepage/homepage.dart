@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                     image: AssetImage('images/ing.png')),
               ),
             ),
-          elevation: 10,)
+          elevation: 0,)
           :null,
            
             body: const Layout()

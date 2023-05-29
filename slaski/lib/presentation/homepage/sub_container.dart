@@ -78,9 +78,9 @@ class SubContainer extends StatelessWidget {
                           wordSpacing: Layout.isMobile(context) ? 2 : 1),
                     ),
                     const SizedBox(height: 30),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
                           'Login',
                           style: TextStyle(

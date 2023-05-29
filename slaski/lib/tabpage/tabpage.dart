@@ -1,8 +1,12 @@
 // import 'package:cali_bank/presentation/TabPage/tap_bars/personal.dart';
 // import 'package:cali_bank/presentation/TabPage/tap_bars/treasury.dart';
+import 'dart:io';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:image_picker/image_picker.dart';
 
 // import 'backgroundimage.dart';
 // import '../../LayOut/LayOut.dart';
@@ -22,8 +26,8 @@ class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
   late TabController tabBarController;
   late AnimationController _animationController;
   bool isPlaying = false;
-  // final List mobilePics = [const AssetImage('images/coins2.jpeg'),
-  // const AssetImage('images/coins5.jpeg')];
+  File? _image;
+  Uint8List webImage = Uint8List(8);
 
   @override
   void initState() {
@@ -57,7 +61,7 @@ class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
             leading: Padding(
               padding: const EdgeInsets.only(top: 15.0),
               child: IconButton(
-                hoverColor: CupertinoColors.white.withOpacity(0),
+                hoverColor: CupertinoColors.systemGrey.withOpacity(0.5),
                 //splashColor: Colors.greenAccent,
 
                 icon: AnimatedIcon(
@@ -76,44 +80,82 @@ class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
                 },
               ),
             ),
-            title: const Image(
-                width: 100,
-                filterQuality: FilterQuality.high,
-                fit: BoxFit.contain,
-                height: 50,
-                image: AssetImage('images/ing.png')),
+            title: const Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: 0.0),
+                child: Image(
+                    width: 110,
+                    filterQuality: FilterQuality.high,
+                    fit: BoxFit.contain,
+                    height: 50,
+                    image: AssetImage('images/ing.png')),
+              ),
+            ),
             actions: [
               Padding(
-                padding: const EdgeInsets.only(right: 10.0,top: 15),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Padding(
-                        padding: const EdgeInsets.all(2.0),
-                        child: ClipOval(
-                          child: Image.asset(
-                              width: 50,
-                              filterQuality: FilterQuality.high,
-                              height: 50,
-                              'images/rose.jpeg',
-                              fit: BoxFit.cover),
-                        )),
-                    const Text('Hi Desmond Phillmann',
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blueGrey,
-                        )),
-                  ],
+                padding: const EdgeInsets.only(right: 10.0, top: 0),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: Container(
+                            margin: const EdgeInsets.all(5.0),
+                            child: Card(
+                              child: Stack(children: [
+                                SizedBox(
+                                  child: _image == null
+                                      ? const Image(
+                                          width: 60,
+                                          filterQuality: FilterQuality.high,
+                                          fit: BoxFit.contain,
+                                          height: 60,
+                                          image: AssetImage('images/des.jpeg'))
+                                      : SizedBox(
+                                          child: Image(
+                                              width: 60,
+                                              filterQuality: FilterQuality.high,
+                                              fit: BoxFit.contain,
+                                              height: 60,
+                                              image: FileImage(_image!)),
+                                        ),
+                                ),
+                                Positioned(
+                                    bottom: 0,
+                                    right: 1,
+                                    child: InkWell(
+                                      onTap: () {
+                                        showModalBottomSheet(
+                                            context: context,
+                                            builder: (builder) =>
+                                                bottomsheet());
+                                      },
+                                      child: const Icon(Icons.camera_alt,
+                                          color: Colors.teal),
+                                    )),
+                              ]),
+                            ),
+                          )),
+                      const Text('Hi Desmond Phillmann',
+                          style: TextStyle(
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blueGrey,
+                          )),
+                    ],
+                  ),
                 ),
               )
             ],
             elevation: 0,
           ),
           body: Padding(
-              padding:Layout.isMobile(context)? const EdgeInsets.only(
-                  top: 30, bottom: 5, left: 0, right: 0):const EdgeInsets.only(
-                  top: 30, bottom: 30, left: 0, right: 0),
+              padding: Layout.isMobile(context)
+                  ? const EdgeInsets.only(top: 20, bottom: 5, left: 0, right: 0)
+                  : const EdgeInsets.only(
+                      top: 30, bottom: 30, left: 0, right: 0),
               child: Center(
                   child: SizedBox(
                 width: Layout.isMobile(context) ? width : width / 1.6,
@@ -121,18 +163,19 @@ class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
                   padding: const EdgeInsets.all(2.0),
                   child: DefaultTabController(
                       initialIndex: 0,
-                      length: 3, // length of tabs
+                      length: 2, // length of tabs
                       child: Column(children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.4),
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(20),
-                              topRight: Radius.circular(20),
-                            ),
-                          ),
-                          height: 40,
+                        SizedBox(
+                          // decoration: BoxDecoration(
+                          //   color: Colors.white.withOpacity(0.4),
+                          //   borderRadius: const BorderRadius.only(
+                          //     topLeft: Radius.circular(20),
+                          //     topRight: Radius.circular(20),
+                          //   ),
+                          // ),
+                          //  height: 40,
                           child: Container(
+                            height: 30,
                             decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(20),
@@ -165,7 +208,8 @@ class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
                             ),
                           ),
                         ),
-                        Flexible(
+                        Expanded(
+                          flex: 8,
                           child: Container(
                               // height: 400,
                               decoration: BoxDecoration(
@@ -192,5 +236,56 @@ class _TabPageState extends State<TabPage> with TickerProviderStateMixin {
                 ),
               )))),
     );
+  }
+
+  bottomsheet() {
+    return Container(
+      height: 100,
+      width: MediaQuery.of(context).size.width,
+      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      child: Column(children: [
+        const Text(
+          'Choose Profile Photo',
+          style: TextStyle(fontSize: 14),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+                onPressed: () {
+                  _pickimage(ImageSource.camera);
+                },
+                icon: const Icon(Icons.camera),
+                tooltip: 'Camera'),
+            IconButton(
+                onPressed: () {
+                  _pickimage(ImageSource.gallery);
+                },
+                icon: const Icon(Icons.image),
+                tooltip: 'Gallery'),
+          ],
+        )
+      ]),
+    );
+  }
+
+  Future<void> _pickimage(ImageSource source) async {
+    try {
+      final image = await ImagePicker().pickImage(source: source);
+      if (image == null) return;
+      File? img = File(image.path);
+      setState(() {
+        _image = img;
+        Navigator.of(context).pop();
+      });
+    } on PlatformException catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+      Navigator.of(context).pop();
+    }
   }
 }
