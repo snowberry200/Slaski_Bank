@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../circularprogressive.dart';
+import '../widget/circularprogressive.dart';
 import '../../layout/layout.dart';
 import '../../layout/password_layout.dart';
 import 'container_widget.dart';
@@ -38,7 +38,7 @@ class SubContainer extends StatelessWidget {
       decoration: BoxDecoration(
         color: Layout.isMobile(context)
             ? CupertinoColors.white.withOpacity(0.2)
-            : CupertinoColors.white.withOpacity(1),
+            : CupertinoColors.white.withOpacity(0.4),
         borderRadius: const BorderRadius.only(
             topRight: Radius.circular(5),
             topLeft: Radius.circular(5),
@@ -78,9 +78,9 @@ class SubContainer extends StatelessWidget {
                           wordSpacing: Layout.isMobile(context) ? 2 : 1),
                     ),
                     const SizedBox(height: 30),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
                           'Login',
                           style: TextStyle(
@@ -135,7 +135,7 @@ class SubContainer extends StatelessWidget {
                           decoration: InputDecoration(
                               focusedBorder: myfocusborder(),
                               focusColor: Colors.red,
-                              fillColor: CupertinoColors.white,
+                              fillColor: CupertinoColors.white.withOpacity(0.6),
                               filled: true,
                               contentPadding: const EdgeInsets.only(
                                 left: 10,

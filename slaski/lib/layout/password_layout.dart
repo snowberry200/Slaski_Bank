@@ -48,9 +48,5 @@ class _PasswordLayoutState extends State<PasswordLayout> {
       }
     });
 
-//  void parentChange(newString) {setState(() {
-//     email=newString;
-
-//   });}
   }
 }

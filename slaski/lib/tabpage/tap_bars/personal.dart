@@ -1,7 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:slaski/presentation/personal_view.dart';
+import 'package:slaski/presentation/account_view/personal_view.dart';
 
 
 class PersonalForm extends StatefulWidget {

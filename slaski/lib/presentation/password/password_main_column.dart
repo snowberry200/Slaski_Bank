@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../tabpage/tabpage.dart';
-import '../../backgroundimage.dart';
+import '../widget/backgroundimage.dart';
 import '../../layout/layout.dart';
 import '../../layout/password_layout.dart';
 import '../homepage/homepage.dart';
@@ -125,7 +125,7 @@ class _PasswordColumnState extends State<PasswordColumn> {
     return BackgroundImageWidget(
         image: Layout.isMobile(context)
             ? const AssetImage('images/pine.jpeg')
-            : const AssetImage('images/red.jpeg'),
+            : const AssetImage('images/engine.jpeg'),
         child: Scaffold(
             backgroundColor: PasswordLayout.isMobile(context)
                 ? Colors.white
@@ -256,7 +256,7 @@ class _PasswordColumnState extends State<PasswordColumn> {
                                               MaterialPageRoute(
                                                   builder: (context) =>
                                                       const HomePage(
-                                                        email: '',
+
                                                       )));
                                         },
                                       ),
@@ -343,31 +343,6 @@ class _PasswordColumnState extends State<PasswordColumn> {
                                             MaterialPageRoute(
                                                 builder: (context) =>
                                                     const TabPage()));
-            
-                                        // FutureBuilder(
-                                        //     future: Database(
-                                        //             username:
-                                        //                 widget.sameCallback,
-                                        //             pass: _password.text)
-                                        //         .getinfo(),
-                                        //     builder: (context, snapshot) {
-                                        //       if (snapshot
-                                        //               .connectionState ==
-                                        //           ConnectionState.done) {
-                                        //         return const ScaffoldMessenger(
-                                        //           child: SnackBar(
-                                        //               content: Text(
-                                        //                   'zdałeś',
-                                        //                   style: TextStyle(
-                                        //                       color: Colors
-                                        //                           .blue)),
-                                        //               backgroundColor:
-                                        //                   Colors.red),
-                                        //         );
-                                        //       } else {
-                                        //         return const CircularProgressIndicator();
-                                        //       }
-                                        //     });
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(

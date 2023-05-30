@@ -19,7 +19,7 @@ class IsDeskTabContainerWidget extends StatelessWidget {
     return Container(
         width: MediaQuery.of(context).size.width,
         height: 55,
-        decoration: const BoxDecoration(
+        decoration:  const BoxDecoration(
             color: Color(0xFFd9d9d9),
             borderRadius: BorderRadius.all(Radius.circular(5))),
         child: Row(
@@ -90,7 +90,7 @@ class IsDeskTabContainerWidget extends StatelessWidget {
                 TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const HomePage(email: '',)));
+                          builder: (context) => const HomePage()));
                     },
                     child: const Text(' Wersja kontrastowa',
                         style: TextStyle(color: Colors.black)))

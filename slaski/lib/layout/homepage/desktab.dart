@@ -91,7 +91,7 @@ class IsDeskTabContainerWidget extends StatelessWidget {
                 TextButton(
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const HomePage(email: '',)));
+                          builder: (context) => const HomePage()));
                     },
                     child: const Text(' Wersja kontrastowa',
                         style: TextStyle(color: Colors.black)))

@@ -1,18 +1,18 @@
 
 import 'package:flutter/material.dart';
-import '../../backgroundimage.dart';
+import '../widget/backgroundimage.dart';
 import '../../layout/layout.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key, required String email});
+  const HomePage({super.key,});
 
   @override
   Widget build(BuildContext context) {
    
     return BackgroundImageWidget(
         image: Layout.isMobile(context)
-            ? const AssetImage('images/chair.jpeg')
-            : const AssetImage('images/pine.jpeg'),
+            ? const AssetImage('images/hy.jpeg')
+            : const AssetImage('images/tree.jpeg'),
         child:  Scaffold(
            backgroundColor: Colors.transparent,
           appBar:Layout.isMobile(context)?
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
                     image: AssetImage('images/ing.png')),
               ),
             ),
-          elevation: 10,)
+          elevation: 0,)
           :null,
            
             body: const Layout()
@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
 }
 
 OutlineInputBorder myfocusborder() {
-  return   const OutlineInputBorder(
+  return  const OutlineInputBorder(
     
       borderRadius: BorderRadius.all(Radius.circular(5)),
       borderSide: BorderSide(
