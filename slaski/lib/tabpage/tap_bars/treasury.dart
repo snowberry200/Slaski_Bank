@@ -11,10 +11,10 @@ class Treasury extends StatefulWidget {
 class _TreasuryState extends State<Treasury> {
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(right: 10, left: 10),
+    return Padding(
+      padding: const EdgeInsets.only(bottom:20,right: 10, left: 10),
       child: SizedBox(
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(
               height: 10,

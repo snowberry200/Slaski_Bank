@@ -11,12 +11,12 @@ import 'homepage.dart';
 
 class SubContainer extends StatelessWidget {
   const SubContainer({
-    Key? key,
+    super.key,
     required this.formKey,
     required this.loginController,
     required this.urk,
     required this.url,
-  }) : super(key: key);
+  });
 
   final GlobalKey<FormState> formKey;
   final TextEditingController loginController;
@@ -259,10 +259,12 @@ class SubContainer extends StatelessWidget {
                               // Timer(const Duration(seconds: 3),
                               //     () => {launchUrl(url), Navigator.pop(context)});
                               Future.delayed(const Duration(seconds: 3), () {
-                                Navigator.of(context).push(MaterialPageRoute(
+                                if (context.mounted) {
+                                  Navigator.of(context).push(MaterialPageRoute(
                                     builder: (context) => PasswordLayout(
                                           email: loginController.text,
                                         )));
+                                }
                               });
 
                               debugPrint('User ID:${loginController.text}');

@@ -7,10 +7,10 @@ import '../../presentation/homepage/homepage.dart';
 class IsDeskTabContainerWidget extends StatelessWidget {
   
   const IsDeskTabContainerWidget({
-    Key? key,
+    super.key,
     required this.keyi,
     required this.lock,
-  }) : super(key: key);
+  });
 
   final Uri keyi;
   final Uri lock;

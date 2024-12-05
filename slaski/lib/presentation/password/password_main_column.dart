@@ -111,14 +111,14 @@ class _PasswordColumnState extends State<PasswordColumn> {
           return 'Wprowadź poprawne hasło';
         } else if (ifpassword.isEmpty) {
           return "Proszę wprowadzić hasło";
-        } 
+        }
         bool result = validatePassword(ifpassword);
-                        if(result){
-                          // create account event
-                         return null;
-                        }else{
-                          return " Enter a correct password";
-                        }
+        if (result) {
+          // create account event
+          return null;
+        } else {
+          return " Enter a correct password";
+        }
       },
     );
 
@@ -130,28 +130,31 @@ class _PasswordColumnState extends State<PasswordColumn> {
             backgroundColor: PasswordLayout.isMobile(context)
                 ? Colors.white
                 : Colors.transparent,
-                appBar: AppBar(
-                  backgroundColor: CupertinoColors.white,
-                  elevation: 0,
-                  shadowColor: null,
-                  title: PasswordLayout.isMobile(context)
-                                  ? const Padding(
-                                      padding: EdgeInsets.only(left: 40.0),
-                                      child: Image(
-                                          width: 100,
-                                          filterQuality: FilterQuality.high,
-                                          fit: BoxFit.contain,
-                                          height: 30,
-                                          image: AssetImage('images/ing.png')),
-                                    )
-                                  : const Image(
-                                      width: 100,
-                                      filterQuality: FilterQuality.high,
-                                      fit: BoxFit.contain,
-                                      height: 30,
-                                      image: AssetImage('images/ing.png')),),
+            appBar: PasswordLayout.isMobile(context)
+                ? AppBar(
+                    backgroundColor: CupertinoColors.white,
+                    elevation: 0,
+                    shadowColor: null,
+                    title: PasswordLayout.isMobile(context)
+                        ? const Padding(
+                            padding: EdgeInsets.only(left: 40.0),
+                            child: Image(
+                                width: 100,
+                                filterQuality: FilterQuality.high,
+                                fit: BoxFit.contain,
+                                height: 30,
+                                image: AssetImage('images/ing.png')),
+                          )
+                        : const Image(
+                            width: 100,
+                            filterQuality: FilterQuality.high,
+                            fit: BoxFit.contain,
+                            height: 30,
+                            image: AssetImage('images/ing.png')),
+                  )
+                : null,
             body: SingleChildScrollView(
-              physics:const BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -170,7 +173,6 @@ class _PasswordColumnState extends State<PasswordColumn> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              
                               const SizedBox(
                                 height: 20,
                               ),
@@ -198,8 +200,8 @@ class _PasswordColumnState extends State<PasswordColumn> {
                               SizedBox(
                                   child: PasswordLayout.isMobile(context)
                                       ? const Padding(
-                                          padding:
-                                              EdgeInsets.only(left: 40, top: 10),
+                                          padding: EdgeInsets.only(
+                                              left: 40, top: 10),
                                           child: Text(
                                             'Adres e-mail',
                                             style: TextStyle(
@@ -255,9 +257,7 @@ class _PasswordColumnState extends State<PasswordColumn> {
                                           Navigator.of(context).pushReplacement(
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      const HomePage(
-
-                                                      )));
+                                                      const HomePage()));
                                         },
                                       ),
                                     ],
@@ -268,7 +268,10 @@ class _PasswordColumnState extends State<PasswordColumn> {
                                   key: formkey,
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        top: 30, bottom: 20, left: 40, right: 40),
+                                        top: 30,
+                                        bottom: 20,
+                                        left: 40,
+                                        right: 40),
                                     child: paswordfield,
                                   )),
                               Align(
@@ -284,7 +287,8 @@ class _PasswordColumnState extends State<PasswordColumn> {
                                 padding: const EdgeInsets.only(left: 40),
                                 child: Row(
                                   children: [
-                                    Transform.scale(scale: 1.1, child: checkmark),
+                                    Transform.scale(
+                                        scale: 1.1, child: checkmark),
                                     const SizedBox(width: 5),
                                     Text(
                                       'Nie wylogowuj mnie',
@@ -299,7 +303,8 @@ class _PasswordColumnState extends State<PasswordColumn> {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 20, left: 40),
+                                padding:
+                                    const EdgeInsets.only(top: 20, left: 40),
                                 child: Row(
                                   children: [
                                     Flexible(
@@ -322,8 +327,8 @@ class _PasswordColumnState extends State<PasswordColumn> {
                                             child: const Text('Jeszcze',
                                                 style: TextStyle(
                                                     color: Color(0xFFff6200),
-                                                    decoration:
-                                                        TextDecoration.underline,
+                                                    decoration: TextDecoration
+                                                        .underline,
                                                     fontSize: 16)),
                                           )
                                         ],

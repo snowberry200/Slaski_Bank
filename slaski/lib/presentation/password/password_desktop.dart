@@ -6,9 +6,9 @@ import 'package:slaski/presentation/password/password_main_column.dart';
 class PasswordDesktop extends StatefulWidget {
   final String callback;
    const PasswordDesktop({
-    Key? key,
+    super.key,
     required this.callback,
-  }) : super(key: key);
+  });
 
   @override
   State<PasswordDesktop> createState() => _PasswordDesktopState();

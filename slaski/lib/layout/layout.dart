@@ -10,8 +10,8 @@ const mobileScreenSize = 300;
 
 class Layout extends StatelessWidget {
   const Layout({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static bool isMobile(context) =>
       MediaQuery.of(context).size.width < tabletScreenSize;
@@ -31,7 +31,7 @@ class Layout extends StatelessWidget {
           constraints.maxWidth >= tabletScreenSize) {
         return const TabletScreen();
       } else {
-        return  const MobileScreen();
+        return const MobileScreen();
       }
     });
   }
