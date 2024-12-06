@@ -14,9 +14,9 @@ class PasswordLayout extends StatefulWidget {
   final String email;
 
   const PasswordLayout({
-    Key? key,
+    super.key,
     required this.email,
-  }) : super(key: key);
+  });
 
     static bool isMobile(context) =>
       MediaQuery.of(context).size.width < tabletScreenSize;

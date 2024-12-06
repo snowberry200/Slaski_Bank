@@ -11,7 +11,7 @@ import '../../../presentation/widget/database.dart';
 class PasswordDesktop extends StatefulWidget {
   final String callback;
 
-  const PasswordDesktop({Key? key, required this.callback}) : super(key: key);
+  const PasswordDesktop({super.key, required this.callback});
 
   @override
   State<PasswordDesktop> createState() => _PasswordDesktopState();
@@ -317,7 +317,7 @@ class _PasswordDesktopState extends State<PasswordDesktop> {
     if (await canLaunchUrl(url as Uri)) {
       await launchUrl(url as Uri);
     } else {
-      throw 'Couldnt launch url';
+      throw "Couldn't launch url";
     }
   }
 }

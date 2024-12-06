@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:slaski/presentation/homepage/bodySizedBox.dart';
 import 'package:slaski/presentation/homepage/bottomSheet.dart';
-import 'package:slaski/presentation/homepage/sliverAppbar.dart';
+import 'package:slaski/presentation/homepage/sliverappbar.dart';
 
 // import 'backgroundimage.dart';
 // import '../../LayOut/LayOut.dart';

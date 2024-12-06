@@ -69,7 +69,9 @@ class _BottomSheettState extends State<BottomSheett>
       }
     }
     if (context.mounted) {
-      Navigator.of(context).pop();
+      (BuildContext context) {
+        Navigator.of(context).pop();
+      };
     }
   }
 }

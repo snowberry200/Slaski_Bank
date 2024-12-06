@@ -3,10 +3,10 @@ import 'package:url_launcher/url_launcher.dart';
 
 class IsmibilecontainerWidget extends StatelessWidget {
   const IsmibilecontainerWidget({
-    Key? key,
+    super.key,
     required this.keyi,
     required this.lock,
-  }) : super(key: key);
+  });
 
   final Uri keyi;
   final Uri lock;

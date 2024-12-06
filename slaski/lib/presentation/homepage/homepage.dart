@@ -8,8 +8,8 @@ class HomePage extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return BackgroundImageWidget(
+  Widget build(BuildContext context) =>
+     BackgroundImageWidget(
         image: Layout.isMobile(context)
             ? const AssetImage('images/hy.jpeg')
             : const AssetImage('images/tree.jpeg'),
@@ -34,15 +34,15 @@ class HomePage extends StatelessWidget {
                   )
                 : null,
             body: const Layout()));
-  }
+  
 }
 
-OutlineInputBorder myfocusborder() {
-  return const OutlineInputBorder(
+OutlineInputBorder myfocusborder() =>
+   const OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(5)),
       borderSide: BorderSide(
         style: BorderStyle.solid,
         color: Colors.deepOrangeAccent,
         width: 3,
       ));
-}
+

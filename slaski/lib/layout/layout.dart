@@ -22,8 +22,7 @@ class Layout extends StatelessWidget {
       MediaQuery.of(context).size.width >= desktopScreenSize;
 
   @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
+  Widget build(BuildContext context) => LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       if (constraints.maxWidth >= desktopScreenSize) {
         return const DesktopScreen();
@@ -34,5 +33,5 @@ class Layout extends StatelessWidget {
         return const MobileScreen();
       }
     });
-  }
+  
 }
