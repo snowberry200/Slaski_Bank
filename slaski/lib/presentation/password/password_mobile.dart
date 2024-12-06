@@ -11,8 +11,8 @@ class PasswordMobile extends StatefulWidget {
     final String callback;
 
   const PasswordMobile({
-    Key? key, required this.callback,
-  }) : super(key: key);
+    super.key, required this.callback,
+  });
 
   @override
   State<PasswordMobile> createState() => _PasswordMobileState();
