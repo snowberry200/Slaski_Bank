@@ -11,7 +11,6 @@ class PersonalAccountView extends StatefulWidget {
 }
 
 class _PersonalAccountViewState extends State<PersonalAccountView>
-// with TickerProviderStateMixin
 {
   late List<ColumnModule> histories;
   bool isPlaying = false;
@@ -105,7 +104,6 @@ class _PersonalAccountViewState extends State<PersonalAccountView>
     final List<String> columns = ['Date', 'Credit', 'Amount'];
     return DataTable(
         decoration: BoxDecoration(
-         
             borderRadius: const BorderRadius.all(Radius.circular(0)),
             border: Border.all(
                 color: const Color.fromARGB(255, 223, 236, 235), width: 2)),
@@ -122,7 +120,8 @@ class _PersonalAccountViewState extends State<PersonalAccountView>
         rows: getRows(histories));
   }
 
-  List<DataColumn> getColumn(List<String> columns) => columns.map((column) {
+  List<DataColumn> getColumn(List<String> columns) =>
+      columns.map((String column) {
         return DataColumn(
             label: Text(column,
                 style: const TextStyle(
